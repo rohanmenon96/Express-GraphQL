@@ -5,7 +5,7 @@ const {GraphQLObjectType, GraphQLString, GraphQLSchema} = graphql;
 
 var books = 
     [
-    {name: 'book1', id: '1'}
+    {name: 'book1', id: '1', genre: 'comedy'}
     ]
 
 const BookType = new GraphQLObjectType({
