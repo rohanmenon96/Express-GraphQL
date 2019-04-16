@@ -1,5 +1,5 @@
 {
-  "name": "graphql",
+  "name": "express-graphql",
   "version": "1.0.0",
   "description": "GraphQL Optimization",
   "main": "app.js",
