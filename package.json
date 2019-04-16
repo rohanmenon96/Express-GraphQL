@@ -1,5 +1,5 @@
 {
-  "name": "express-graphql",
+  "name": "restapioptimization",
   "version": "1.0.0",
   "description": "GraphQL Optimization",
   "main": "app.js",
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/rohanmenon96/GraphQL#readme",
   "dependencies": {
     "express": "^4.16.4",
+    "graphql": "^14.2.1",
     "nodemon": "^1.18.11"
   }
 }
