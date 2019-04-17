@@ -5,12 +5,18 @@ const {GraphQLObjectType, GraphQLString, GraphQLSchema, GraphQLID, GraphQLInt, G
 
 var books = 
     [
-    {name: 'book1', id: '1', genre: 'comedy', authorId: '1'}
+    {name: 'book1', id: '1', genre: 'comedy', authorId: '1'},
+    {name: 'book2', id: '2', genre: 'horror', authorId: '2'},
+    {name: 'book3', id: '3', genre: 'romance', authorId: '3'},
+    {name: 'book4', id: '4', genre: 'thriller', authorId: '4'}
     ]
 
 var authors = 
     [
-    {name: 'author1', id: '1', age: '44'}
+    {name: 'author1', id: '1', age: '44'},
+    {name: 'author2', id: '2', age: '34'},
+    {name: 'author3', id: '3', age: '24'},
+    {name: 'author4', id: '4', age: '14'}
     ]
 
     
@@ -63,6 +69,15 @@ const RootQuery = new GraphQLObjectType({
             args: {id: {type: GraphQLID}},
             resolve(parent, args){
                 return _.find(authors,{id:args.id})
+            }
+        },
+
+        books:{
+            type: new GraphQLList(BookType),
+            args: {},
+            resolve(parent,args){
+                console.log(parent)
+                return _.filter(books,{})
             }
         }
     }
