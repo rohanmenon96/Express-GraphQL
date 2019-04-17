@@ -5,7 +5,7 @@ const {GraphQLObjectType, GraphQLString, GraphQLSchema, GraphQLID, GraphQLInt} =
 
 var books = 
     [
-    {name: 'book1', id: '1', genre: 'comedy'}
+    {name: 'book1', id: '1', genre: 'comedy', authorId: '1'}
     ]
 
 var authors = 
@@ -20,7 +20,14 @@ const BookType = new GraphQLObjectType({
     fields: ()=>({
         id: {type: GraphQLID},
         name: {type: GraphQLString},
-        genre: {type: GraphQLString}
+        genre: {type: GraphQLString},
+        author: {
+            type: AuthorType,
+            resolve(parent,args){
+                console.log("\nParent : ",parent)
+                return _.find(authors,{id: parent.authorId})
+            }
+        }
     }) 
 })
 
